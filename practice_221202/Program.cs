@@ -6,44 +6,22 @@ namespace practice_221202
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter \"WebApp\" or \"MobileApp\".");
-            string appType = Console.ReadLine();
+            var webApp = new WebApp 
+            { 
+                Name = "網頁程序", 
+                Description = "瀏覽器端" 
+            };
 
-            Console.WriteLine("Please enter \"ReadMail\" or \"WriteMail\".");
-            string order = Console.ReadLine();
-
-            if (appType == "WebApp")
-            {
-                App WebApp;
-                WebApp = new App("WebApp", "WebApp's description");
-
-                if (order == "ReadMail")
-                {
-                    Console.WriteLine(WebApp.ReadMail());
-                }
-                else if (order == "WriteMail")
-                {
-                    Console.WriteLine(WebApp.WriteMail());
-                }
-            }
-            else if (appType == "MobileApp")
-            {
-                App MobileApp;
-                MobileApp = new App("MobileApp", "MobileApp's description");
-
-                if (order == "ReadMail")
-                {
-                    Console.WriteLine(MobileApp.ReadMail());
-                }
-                else if (order == "WriteMail")
-                {
-                    Console.WriteLine(MobileApp.WriteMail());
-                }
-            }
-            else
-            {
-                Console.WriteLine("Error.");
-            }
+            var mobileApp = new MobileApp 
+            { 
+                Name = "行動程序", 
+                Description = "行動端" 
+            };
+            
+            Console.WriteLine(webApp.ReadMail());
+            Console.WriteLine(webApp.WriteMail());
+            Console.WriteLine(mobileApp.ReadMail());
+            Console.WriteLine(mobileApp.WriteMail());
         }
     }
 }
